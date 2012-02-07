@@ -1,0 +1,58 @@
+HTTP requests in Perl?
+
+* LWP::UserAgent or LWP::Simple
+
+
+parallel requests with
+
+* LWP::Parallel::UserAgent (very old - 2004)
+* HTTP::Async
+* AnyEvent::HTTP, POE::Component::Client::HTTP
+
+
+some alternatives
+
+* HTTP::Lite
+* HTTP::Client (only GET!)
+
+
+if you don't mind installing Mojolicious you get a powerful HTTP client
+
+* asynchronous
+* HTTP 1.1
+* WebSocket support
+
+
+synopsis
+
+use Mojo::UserAgent;
+my $ua = Mojo::UserAgent->new;
+
+my $tx = $ua->get('http://www.perlworkshop.de/');
+say $tx->res->body;
+
+
+HTTP request methods
+
+* get
+* post, post_form
+* put
+* delete
+* head
+
+
+transaction object
+
+###
+
+
+synopsis (non-blocking)
+
+$ua->get('http://kraih.com' => sub {
+    my ($ua, $tx) = @_;
+    say $tx->res->body;
+    Mojo::IOLoop->stop;
+});
+Mojo::IOLoop->start;
+
+
