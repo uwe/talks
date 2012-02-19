@@ -1,0 +1,45 @@
+\section{Einf\"uhrung}
+
+\frame{\tableofcontents[currentsection,hideothersubsections]}
+
+\subsection{HTTP-Requests in Perl?}
+
+\frame{
+  \frametitle{HTTP-Requests in Perl?}
+
+  \begin{itemize}
+    \item LWP::UserAgent
+    \item LWP::Simple
+    \pause
+    \item HTTP::Lite
+    \item HTTP::Client (nur GET!)
+  \end{itemize}
+}
+
+\subsection{parallele HTTP-Requests}
+
+\frame{
+  \frametitle{parallele HTTP-Requests}
+
+  \begin{itemize}
+    \item LWP::Parallel::UserAgent (sehr alt - 2004)
+    \item HTTP::Async
+    \item AnyEvent::HTTP, POE::Component::Client::HTTP
+    \item WWW::Curl::Multi
+  \end{itemize}
+}
+
+\subsection{Mojo::UserAgent}
+
+\frame{
+  \frametitle{Mojo::UserAgent}
+
+  Wer sich nicht daran st\"ort, Mojolicious zu installieren, bekommt einen m\"achtigen HTTP-Klienten:
+
+  \begin{itemize}
+    \item asynchron
+    \item HTTP 1.1
+    \item WebSocket-Unterst\"utzung
+  \end{itemize}
+}
+
