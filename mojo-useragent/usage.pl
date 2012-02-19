@@ -12,3 +12,6 @@ my $tx = $ua->get('http://www.perlworkshop.de/');
 # say $tx->res->body;
 
 say $tx->res->dom('.hi > p')->[1]->text;
+
+# mojo get -r www.perlworkshop.de '.hi > p' 1 text
+

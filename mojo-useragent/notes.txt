@@ -8,6 +8,7 @@ parallel requests with
 * LWP::Parallel::UserAgent (very old - 2004)
 * HTTP::Async
 * AnyEvent::HTTP, POE::Component::Client::HTTP
+* WWW::Curl::Multi
 
 
 some alternatives
@@ -43,6 +44,12 @@ HTTP request methods
 
 transaction object
 
+* req(uest) and res(ponse)
+###
+
+
+response object
+
 ###
 
 
@@ -54,5 +61,46 @@ $ua->get('http://kraih.com' => sub {
     Mojo::IOLoop->stop;
 });
 Mojo::IOLoop->start;
+
+
+Mojo::IOLoop
+
+###
+
+
+parallel requests
+
+my $delay = Mojo::IOLoop->delay;
+foreach my $url ('mojolicio.us', 'cpan.org') {
+    $delay->begin;
+    $ua->get($url => sub {
+        my ($ua, $tx) = @_;
+        $delay->end($tx->res->dom->at('title')->text);
+    });
+  }
+my @titles = $delay->wait;
+
+
+Mojo::IOLoop::Delay
+
+###
+
+
+Mojo::UserAgent::Queue???
+
+###
+
+
+Part 2 content processing
+
+Mojo::DOM
+
+
+Mojo::JSON::Pointer
+
+
+Part 3 command line
+
+mojo URL selector
 
 

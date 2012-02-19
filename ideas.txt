@@ -1,0 +1,9 @@
+Mojo::UserAgent::Queue
+- Anzahl parallele Requests gesamt
+- Anzahl parallele Requests pro Hostname
+- kehrt zurueck, wenn alle Requests abgearbeitet sind
+
+
+
+MooseX::CoverableModifiers
+
