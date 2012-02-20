@@ -26,7 +26,8 @@
   \begin{itemize}
     \item req - request-Objekt
     \item req - response-Objekt
-    \item TODO
+    \item local\_address, local\_port
+    \item remote\_address, remote\_port
   \end{itemize}
 }
 
@@ -42,7 +43,9 @@
   \frametitle{Mojo::IOLoop}
 
   \begin{itemize}
-    \item TODO
+    \item minimalistic IO loop
+    \item building block for non-blocking TCP clients and servers
+    \item start, stop
   \end{itemize}
 }
 
@@ -57,7 +60,12 @@
 \frame{
   \frametitle{Mojo::IOLoop::Delay}
 
-  TODO
+  \begin{itemize}
+    \item synchronize events
+    \item begin - increase event counter
+    \item end - decrease event counter (and set return values)
+    \item wait - wait for "finish" event (and return results)
+  \end{itemize}
 }
 
 \frame{
