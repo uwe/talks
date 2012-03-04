@@ -8,10 +8,10 @@
   \frametitle{Mojo::DOM}
 
   \begin{itemize}
-    \item HTML5/XML DOM parser
-    \item CSS3 selector support
-    \item remember HTML::TreeBuilder?
-    \item more like HTML::TreeBuilder::XPath
+    \item HTML5/XML DOM-Parser
+    \item Unterst\"utzung fuer CSS3-Selektoren
+    \item klingt wie HTML::TreeBuilder?
+    \item mehr wie HTML::TreeBuilder::XPath
   \end{itemize}
 }
 
@@ -25,8 +25,11 @@
   \frametitle{Mojo::DOM}
 
   \begin{itemize}
-    \item TODO
-    \item
+    \item new/parse - DOM aufbauen
+    \item Suche: at, find
+    \item Bewegung: root, children, parent, div, p (Tags)
+    \item Extraktion: attr, text
+    \item Manipulation: append, prepend, replace
   \end{itemize}
 }
 
@@ -35,6 +38,18 @@
 \frame{
   \frametitle{Mojo::JSON::Pointer}
 
-  TODO
+  \lstinputlisting{perl/json.pl}
+}
+
+\subsection{Mojo::JSON::Pointer}
+
+\frame{
+  \frametitle{Mojo::JSON::Pointer}
+
+  \begin{itemize}
+    \item \url{http://tools.ietf.org/html/draft-pbryan-zyp-json-pointer-02}
+    \item get - extract parts of the data structure
+    \item contains - check if a sub structure is present
+  \end{itemize}
 }
 
