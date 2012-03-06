@@ -1,0 +1,93 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{pgf}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{beamerthemeshadow}
+\usepackage{hyperref}
+
+\title{Memory::Usage + Devel::Loading}
+\subtitle{Speicherverbrauch von Perl-Modulen bestimmen}
+\author{Uwe V\"olker}
+\institute{XING AG}
+\date{07.03.2012}
+
+\lstset{language=perl}
+
+\setbeamerfont{small}{size=\tiny}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame{
+  \frametitle{Memory::Usage}
+
+  \begin{itemize}
+    \item misst Speicherverbrauch vom Perl-Prozess
+    \item verschiedene Messpunkte/-zeitr\"aume m\"oglich
+    \item nur unter Linux (/proc)
+  \end{itemize}
+}
+
+\frame[containsverbatim]{
+  \frametitle{Memory::Usage}
+
+  \usebeamerfont{small}
+  \begin{verbatim}
+> module-size CGI
+time    vsz (  diff)    rss (  diff) shared (  diff)   code (  diff)   data (  diff)
+   0   4932 (  4932)   1948 (  1948)   1544 (  1544)   1268 (  1268)    676 (   676) Base perl plus Memory::Usage
+   0   5640 (   708)   2856 (   908)   1680 (   136)   1268 (     0)   1384 (   708) after 'use CGI'
+  \end{verbatim}
+}
+
+\frame{
+  \frametitle{Devel::Loading}
+
+  \begin{itemize}
+    \item zeigt Lade-Reihenfolge von Perl-Modulen
+    \item gel\"ost \"uber Coderef in \@INC
+  \end{itemize}
+}
+
+\frame[containsverbatim]{
+  \frametitle{Devel::Loading}
+
+  \usebeamerfont{small}
+
+  \begin{verbatim}
+perl -d:Loading -MCGI -e 1
+Loading C:/strawberry/perl/site/lib/sitecustomize.pl at -e line 0.
+Loading CGI.pm at -e line 0.
+Loading Carp.pm at C:/strawberry/perl/lib/CGI.pm line 3.
+Loading Exporter.pm at C:/strawberry/perl/lib/Carp.pm line 14.
+Loading CGI/Util.pm at C:/strawberry/perl/lib/CGI.pm line 27.
+Loading strict.pm at C:/strawberry/perl/lib/CGI/Util.pm line 3.
+Loading vars.pm at C:/strawberry/perl/lib/CGI/Util.pm line 4.
+Loading warnings/register.pm at C:/strawberry/perl/lib/vars.pm line 7.
+Loading warnings.pm at C:/strawberry/perl/lib/warnings/register.pm line 24.
+Loading constant.pm at C:/strawberry/perl/lib/CGI.pm line 33.
+Loading overload.pm at C:/strawberry/perl/lib/CGI.pm line 3847.
+  \end{verbatim}
+}
+
+\frame{
+  \frametitle{Kombination der beiden Module}
+
+  \lstinputlisting{mem.pl}
+}
+
+\frame[containsverbatim]{
+
+  \usebeamerfont{small}
+
+  \begin{verbatim}
+
+  \end{verbatim}
+}
+
+% Catalyst vs. Mojolicious
+
+\end{document}
