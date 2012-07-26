@@ -1,0 +1,52 @@
+\section{Introduction}
+
+\frame{\tableofcontents[currentsection,hideothersubsections]}
+
+\subsection{What is a segfault?}
+
+\frame{
+  \frametitle{What is a segfault?}
+
+  \begin{itemize}
+    \item segfault = segmentation fault
+\pause
+    \item every process has memory pages
+    \item these pages are mapped to physical memory
+\pause
+    \item if you try to access an invalid address
+    \item (or write to a protected address)
+\pause
+    \item BOOOM!
+  \end{itemize}
+}
+
+\subsection{Examples - C}
+
+\frame{
+  \frametitle{Examples - C}
+
+  \begin{itemize}
+    \item using uninitialized pointers
+    \item dereferencing NULL pointers
+    \item using "freed" pointers
+  \end{itemize}
+}
+
+\subsection{Examples - Perl}
+
+\frame{
+  \frametitle{Examples - Perl}
+
+  \begin{itemize}
+    \item bug in a XS extension
+    \item bug in Perl itself (rare)
+\pause
+    \item Perl 5.6.1:
+    \item perl -e 'undef a'
+    \item perl -e '*::=\%::=0'
+\pause
+    \item Perlmonks thread: (Golf) Segfault Perl
+    \item \url{http://perlmonks.org/?node_id=156461}
+  \end{itemize}
+}
+

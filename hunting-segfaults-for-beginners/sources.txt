@@ -1,0 +1,10 @@
+http://en.wikipedia.org/wiki/Segmentation_fault
+http://perlmonks.org/?node_id=156461
+http://search.cpan.org/~stas/Debug-FaultAutoBT-0.02/DumpCore.pm
+
+http://www.yaldex.com/perl-tutorial-3/0596002270_pmodperl-chp-21-sect-6.html
+http://www.unknownroad.com/rtfm/gdbtut/gdbsegfault.html
+http://www.perlmonks.org/?node_id=789362
+http://www.linux-magazin.de/Heft-Abo/Ausgaben/2007/01/Getriebeschaden
+http://cubloid.blogspot.de/2009/07/debugging-perl-programsinternals-in-gdb.html
+
