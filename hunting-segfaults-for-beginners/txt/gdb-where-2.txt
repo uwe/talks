@@ -1,0 +1,10 @@
+(gdb) where
+#0  0x00007f2f5d086754 in crash_now_for_real (suicide_message=0x7f2f5d088450 "Cannot stand this life anymore") at DumpCore.xs:10
+#1  0x00007f2f5d086789 in crash_now (suicide_message=0x7f2f5d088450 "Cannot stand this life anymore", attempt_num=42) at DumpCore.xs:17
+#2  0x00007f2f5d086820 in XS_Debug__DumpCore_segv (cv=0x1087c10) at DumpCore.xs:26
+#3  0x0000000000488db3 in Perl_pp_entersub ()
+#4  0x0000000000480a7d in Perl_runops_standard ()
+#5  0x00000000004336b4 in perl_run ()
+#6  0x000000000041bddc in main ()
+(gdb) 
+

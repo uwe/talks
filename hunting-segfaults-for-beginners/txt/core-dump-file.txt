@@ -1,0 +1,6 @@
+$ ulimit -c unlimited
+$ perl segfault.pl
+Segmentation fault (core dumped)
+$ ll core
+-rw-r----- 1 uwe uwe 1695744 Jul 26 14:08 core
+

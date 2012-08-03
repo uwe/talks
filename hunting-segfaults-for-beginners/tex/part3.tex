@@ -2,3 +2,42 @@
 
 \frame{\tableofcontents[currentsection,hideothersubsections]}
 
+\subsection{Introduction}
+
+\frame{
+  \frametitle{Introduction}
+
+  \begin{itemize}
+    \item GNU debugger
+    \item command line debugger
+    \item we use it to extract the stacktrace from the core dump file
+  \end{itemize}
+}
+
+\subsection{Usage}
+
+\frame{
+  \frametitle{Usage}
+
+  \lstinputlisting{txt/gdb-where-1.txt}
+\pause
+  \lstinputlisting{txt/gdb-where-2.txt}
+}
+
+\subsection{Core dump file - reloaded}
+
+\frame{
+  \frametitle{Core dump file - reloaded}
+
+  \begin{itemize}
+    \item {\tt ulimit -c unlimited}
+\pause
+    \item current directory has to be writable
+    \item (can be tricky with Apache)
+\pause
+    \item {\tt ps auxww|grep apache}
+    \item {\tt ls -l /proc/1234/cwd}
+  \end{itemize}
+}
+
+

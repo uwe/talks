@@ -1,0 +1,4 @@
+gdb + where
+core dump: ulimit -c unlimited
+compile perl with debug symbols
+

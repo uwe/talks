@@ -2,3 +2,49 @@
 
 \frame{\tableofcontents[currentsection,hideothersubsections]}
 
+\subsection{Usage}
+
+\frame{
+  \frametitle{Usage}
+
+  \begin{itemize}
+    \item "Print out each line before it is executed (like {\tt sh -x})"
+\pause
+    \item {\tt perl -d:Trace program}
+    \item for CGI: put it in your shebang line
+  \end{itemize}
+\pause
+  \lstinputlisting{txt/devel-trace-output.txt}
+}
+
+\subsection{How do I spot a segfault?}
+
+\frame{
+  \frametitle{How do I spot a segfault?}
+
+  \begin{itemize}
+    \item look at the last few lines
+    \item if it stops immediately, it might be a segfault
+\pause
+    \item grep for your script name
+    \item output can be very large, with long lines
+    \item {\tt grep -v site\_perl}
+\pause
+    \item in my case: buggy MSSQL driver (easysoft)
+  \end{itemize}
+}
+
+\subsection{Other uses for Devel::Trace}
+
+\frame{
+  \frametitle{Other uses for Devel::Trace}
+
+  \begin{itemize}
+    \item your program is behaving strange and you have no debugger at hand
+    \item (use {\tt grep} and {\tt grep -v} to filter the output)
+\pause
+    \item Does this code get executed?
+    \item Which part of the conditional was taken?
+  \end{itemize}
+}
+
