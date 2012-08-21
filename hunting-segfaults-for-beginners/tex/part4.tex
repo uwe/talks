@@ -1,0 +1,27 @@
+\section{Devel::bt}
+
+\frame{\tableofcontents[currentsection,hideothersubsections]}
+
+\subsection{Usage}
+
+\frame{
+  \frametitle{Usage}
+
+  \begin{itemize}
+    \item "Automatic gdb backtraces on errors"
+\pause
+    \item just use the module
+    \item it registers signal handlers for SIGSEGV (and a few more)
+  \end{itemize}
+}
+
+\subsection{How does it work?}
+
+\frame{
+  \frametitle{How does it work?}
+
+  \begin{itemize}
+    \item the signal handler forks off a process which runs gdb
+    \item gdb attaches to the parent and outputs the stacktrace
+  \end{itemize}
+}
